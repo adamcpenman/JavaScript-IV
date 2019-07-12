@@ -31,9 +31,10 @@ class Student extends Person {
         super(scholar);
         this.previousBackground = scholar.previousBackground,
         this.className = scholar.className,
-        this.favSubjects = scholar.favSubjects;
+        this.favSubjects = scholar.favSubjects,
+        this.grade = scholar.grade; //stretch challenge, trying to figure this out
     }
-    listsSubjects () { 
+    listsSubjects () { //Im not sure if this is the correct way of doing this.
        return `${this.favSubjects}`;
     }
     PRAssignment (student, subject) {
@@ -42,9 +43,8 @@ class Student extends Person {
     sprintChallenge (student, subject) {
       return `${student.name} has begun sprint challenge on ${subject}`;
     }
-    grade () {
-
-    }
+    grade () 
+  //stretch, trying to figure this out
 }
 
 class TeamLeads extends Instructor {
@@ -55,7 +55,8 @@ class TeamLeads extends Instructor {
     }
     standUp (channel) {
     return  `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
-       
+       // Why doesn't this work with just return ${name}? I am only wondering since this is how it is written in the instructions? 
+       // it will always be the name of the insctuctor.
     }
     debugsCode (student, subject) {
       return  `${this.name} debugs ${student.name}'s code on ${subject}`
@@ -89,6 +90,7 @@ const nora = new Student ({
     previousBackground: "Bartender",
     className: "WEBPT8",
     favSubjects: ["HTML, CSS, JavaScript"]
+    grade: 80
 })
 
 const leslie = new TeamLeads ({
